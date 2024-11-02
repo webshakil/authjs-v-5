@@ -1,9 +1,12 @@
+
 import { auth } from '@/auth';
+import UserTable from '@/components/UserTable';
 import Image from 'next/image';
 import React from 'react';
 
 const Page = async () => {
   const session = await auth();
+
   if (!session?.user) return null;
 
   return (
@@ -19,6 +22,8 @@ const Page = async () => {
             alt="User Avatar"
             className="rounded-full"
           />
+          <p>{session?.user?.name}</p>
+          <UserTable/>
         </div>
       </div>
     </div>
@@ -26,4 +31,5 @@ const Page = async () => {
 };
 
 export default Page;
+
 
