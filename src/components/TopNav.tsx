@@ -5,7 +5,7 @@ import Image from "next/image";
 import { handleSignOut } from "@/app/actions/authActions";
 
 export default function Navbar({ session }: { session: any }) {
-  console.log("session from navbar", session)
+  
   return (
     <nav className="bg-blue-600 p-4">
       <div className="container mx-auto flex justify-between items-center">
