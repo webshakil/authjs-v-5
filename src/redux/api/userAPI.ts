@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+
 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api';
-//NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api/register this is api for registering users
 
 export const api = createApi({
   reducerPath: 'api',
@@ -17,8 +17,19 @@ export const api = createApi({
         body: userData,
       }),
     }),
+    loginUser: builder.mutation({
+      query: (credentials) => ({
+        url: 'login',
+        method: 'POST',
+        body: credentials,
+      }),
+
+    }),
   }),
 });
 
-export const { useGetUsersQuery, useRegisterUserMutation } = api;
+export const { useGetUsersQuery, useRegisterUserMutation, useLoginUserMutation } = api;
+
+
+
 

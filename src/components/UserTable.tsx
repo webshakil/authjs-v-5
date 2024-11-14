@@ -42,7 +42,7 @@ const UserTable = () => {
             ))}
           </tbody>
         </table>
-        <pre>{JSON.stringify(users, null, 4)}</pre>
+       
       </div>
     </div>
   );

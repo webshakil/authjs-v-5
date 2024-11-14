@@ -26,10 +26,9 @@ const SignUp: React.FC = () => {
     }
   };
 
-  // Helper function to extract error message
+  
   const getErrorMessage = () => {
     if (error && 'data' in error) {
-      // Assuming the error response has a 'message' property in its data
       return (error.data as { message?: string }).message || 'An unknown error occurred';
     } else if (error && 'message' in error) {
       return error.message;

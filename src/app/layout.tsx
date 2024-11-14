@@ -4,6 +4,7 @@ import "./globals.css";
 import { auth } from "@/auth";
 import ClientProvider from "@/components/ClientProvider";
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,9 +32,12 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ClientProvider session={session}>
+       
           {children}
         </ClientProvider>
       </body>
     </html>
   );
 }
+
+
